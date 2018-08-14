@@ -2,13 +2,14 @@ package example.service;
 
 import java.io.IOException;
 
-import example.ConcordionFixture;
+import org.concordion.cubano.template.driver.services.ExampleRestApi;
 
-public class RestRequestFixture extends ConcordionFixture {
+import example.CubanoDemoFixture;
+
+public class RestRequestFixture extends CubanoDemoFixture {
 
     public boolean callService() throws IOException {
-        return workflow()
-                .restExample()
+        return new ExampleRestApi()
                 .getIPAddress() != null;
     }
 }

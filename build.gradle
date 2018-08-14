@@ -27,7 +27,11 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 repositories {
-	mavenCentral()   
+	maven {
+        url "https://jitpack.io"
+    }
+    mavenCentral()
+    mavenLocal()
 }
 
 
@@ -36,7 +40,9 @@ configurations {
 }
 
 dependencies {
-    testCompile 'org.concordion:cubano-concordion:0.2.1'
+    //testCompile 'org.concordion:cubano-concordion:0.3.0'
+     testCompile 'com.github.concordion.cubano:cubano-concordion:master-SNAPSHOT'
+   
     
     testCompile 'org.hamcrest:hamcrest-junit:2.0.0.0'
     

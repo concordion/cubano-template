@@ -1,12 +1,13 @@
 package example.google;
 
-import example.ConcordionFixture;
+import org.concordion.cubano.template.driver.ui.google.GoogleSearchPage;
 
-public class SearchForConcordionFixture extends ConcordionFixture {
+import example.CubanoDemoBrowserFixture;
+
+public class SearchForConcordionFixture extends CubanoDemoBrowserFixture {
 
     public String google(String term, String site) {
-        return workflow()
-                .openSearch()
+        return GoogleSearchPage.open(this)
                 .searchFor(term)
                 .getSearchResult(site);
     }
