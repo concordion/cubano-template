@@ -31,7 +31,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.concordion</groupId>
-			<artifactId>cubano-core</artifactId>
+			<artifactId>cubano-concordion</artifactId>
 			<version>0.3.4</version>
 			<scope>test</scope>
 		</dependency>
