@@ -22,6 +22,6 @@ public class CubanoTemplateFixtureLogger extends FixtureLogger {
 
     private String getRelativeTestClassName(Class<? extends ConcordionBase> aClass) {
         // This is the name that can be given to the RunSingleTest job in Jenkins
-        return aClass.getName().replace(CubanoTemplateBrowserFixture.class.getPackage().getName() + ".", "");
+        return aClass.getName().replace(CubanoTemplateFixture.class.getPackage().getName() + ".", "");
     }
 }

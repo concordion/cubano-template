@@ -14,6 +14,8 @@ public class HttpEasyConfigurator {
     }
 
     public static void applyDefaultSettings() {
+        AppConfig.getInstance().logSettings();
+
         ProxyConfig proxyConfig = Config.getInstance().getProxyConfig();
         AppConfig config = AppConfig.getInstance();
 
