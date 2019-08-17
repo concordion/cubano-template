@@ -6,10 +6,13 @@ import org.concordion.api.ConcordionResources;
 import org.concordion.api.FailFast;
 import org.concordion.api.extension.Extension;
 import org.concordion.api.extension.Extensions;
+import org.concordion.cubano.config.Config;
+import org.concordion.cubano.driver.concordion.EnvironmentExtension;
 import org.concordion.cubano.driver.concordion.ExceptionHtmlCaptureExtension;
 import org.concordion.cubano.framework.ConcordionBrowserFixture;
 import org.concordion.cubano.framework.resource.CloseListener;
 import org.concordion.cubano.framework.resource.ResourceScope;
+import org.concordion.cubano.template.AppConfig;
 import org.concordion.cubano.template.driver.httpeasy.HttpEasyConfigurator;
 import org.concordion.ext.TimestampFormatterExtension;
 import org.concordion.ext.runtotals.RunTotalsExtension;
@@ -29,6 +32,11 @@ import org.concordion.slf4j.ext.ReportLoggerFactory;
 @Extensions({ TimestampFormatterExtension.class, RunTotalsExtension.class, StatusInfoExtension.class })
 @FailFast
 public abstract class CubanoTemplateFixture extends ConcordionBrowserFixture {
+    @Extension
+    private final EnvironmentExtension footer = new EnvironmentExtension()
+            .withEnvironment(Config.getInstance().getEnvironment().toUpperCase())
+            .withURL(AppConfig.getInstance().getBaseUrl());
+
     protected final ReportLogger reportLogger = ReportLoggerFactory.getReportLogger(this.getClass().getName());
 
     @Extension

@@ -47,8 +47,6 @@ public class AppConfig {
         baseUrl = propertyLoader.getProperty("baseUrl");
         searchUrl = propertyLoader.getProperty("searchUrl");
         defaultTimeout = propertyLoader.getPropertyAsInteger("webdriver.defaultTimeout", "10");
-        databaseUrl = propertyLoader.getProperty("databaseUrl");
-        databaseSchema = propertyLoader.getProperty("databaseSchema");
     }
 
     // Application properties
@@ -62,13 +60,5 @@ public class AppConfig {
 
     public int getDefaultTimeout() {
         return defaultTimeout;
-    }
-
-    public String getDatabaseUrl() {
-        return databaseUrl;
-    }
-
-    public String getDatabaseSchema() {
-        return databaseSchema;
     }
 }
