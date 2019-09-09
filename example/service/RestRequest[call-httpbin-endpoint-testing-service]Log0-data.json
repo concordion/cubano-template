@@ -1,0 +1,14 @@
+{
+  "args": {
+    "name": "fred"
+  },
+  "headers": {
+    "Accept": "text/html, image/gif, image/jpeg, *; q\u003d.2, */*; q\u003d.2",
+    "Cache-Control": "no-cache",
+    "Host": "httpbin.org",
+    "Pragma": "no-cache",
+    "User-Agent": "Java/1.8.0_151"
+  },
+  "origin": "35.192.187.174, 35.192.187.174",
+  "url": "https://httpbin.org/get?name\u003dfred"
+}
