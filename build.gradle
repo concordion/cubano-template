@@ -35,7 +35,7 @@ configurations {
 }
 
 dependencies {
-    testCompile 'org.concordion:cubano-concordion:0.3.4'
+    testCompile 'org.concordion:cubano-concordion:0.3.5'
     
     testCompile 'org.hamcrest:hamcrest-junit:2.0.0.0'
 }
