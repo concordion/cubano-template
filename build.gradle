@@ -1,26 +1,22 @@
-apply plugin: 'java'
-apply plugin: 'findbugs'
-apply plugin: 'checkstyle'
-apply plugin: 'eclipse'
-apply plugin: 'jacoco'
-apply plugin: 'maven'
-apply plugin: 'maven-publish'
+buildscript {
+  repositories {
+    maven {
+      url "https://plugins.gradle.org/m2/"
+    }
+  }
+  dependencies {
+    classpath "gradle.plugin.com.github.spotbugs.snom:spotbugs-gradle-plugin:4.7.1"
+  }
+}
+plugins {
+    id 'java'
+    id 'checkstyle'
+    id "com.github.spotbugs" version "4.7.1"
+}
 
 // need utf-8 to get text with non-standard chars e.g. curly apostrophes used correctly 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
-}
-
-// This is a work around for an outstanding issue getting eclipse plugin to honour encoding options for java
-// https://issues.gradle.org/browse/GRADLE-2274
-eclipse {
-	File f = file('.settings')
-	
-	if (f.exists()) {
-		f = file('.settings/org.eclipse.core.resources.prefs')
-		f.write('eclipse.preferences.version=1\n')
-		f.append('encoding/<project>=UTF-8')
-	}
 }
 
 sourceCompatibility = 1.8
@@ -35,24 +31,17 @@ configurations {
 }
 
 dependencies {
-    testCompile 'org.concordion:cubano-concordion:0.3.5'
+    testImplementation 'org.concordion:cubano-concordion:1.1.0'
     
-    testCompile 'org.hamcrest:hamcrest-junit:2.0.0.0'
-}
-
-
-task wrapper(type: Wrapper) {
-    gradleVersion = '4.4.1'
-    //distributionUrl = "http://services.gradle.org/distributions/gradle-${gradleVersion}-bin.zip"    
+    testImplementation 'org.hamcrest:hamcrest-junit:2.0.0.0'
 }
 
 checkstyle {
 	ignoreFailures = true
-	configDir = new File("${rootDir}/config/checkstyle")	
+	configDirectory = new File("${rootDir}/config/checkstyle")	
 }
 
-findbugs {
-	toolVersion = "3.0.1"
+spotbugs {
 	ignoreFailures = true	
 }
 
