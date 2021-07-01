@@ -22,7 +22,7 @@ public class GoogleSearchPage extends PageObject<GoogleSearchPage> {
     @FindBy(name = "elementNotFound")
     WebElement elementNotFound;
 
-    @FindBy(css = "div.rc")
+    @FindBy(css = "div.NJjxre")
     List<SearchResult> searchResults;
 
     @Override
@@ -49,7 +49,7 @@ public class GoogleSearchPage extends PageObject<GoogleSearchPage> {
 
         query.submit();
 
-        waitUntil(ExpectedConditions.presenceOfElementLocated(By.id("resultStats")), 3);
+        waitUntil(ExpectedConditions.visibilityOfElementLocated(By.id("result-stats")), 3);
 
         return this;
     }
