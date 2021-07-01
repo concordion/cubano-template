@@ -34,6 +34,10 @@ dependencies {
     testImplementation 'org.concordion:cubano-concordion:1.1.0'
     
     testImplementation 'org.hamcrest:hamcrest-junit:2.0.0.0'
+
+    testImplementation 'javax.xml.bind:jaxb-api:2.3.1'
+    testImplementation 'jakarta.xml.ws:jakarta.xml.ws-api:3.0.1'
+    runtimeOnly 'com.sun.xml.ws:jaxws-rt:3.0.1'
 }
 
 checkstyle {
