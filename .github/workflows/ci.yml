@@ -25,12 +25,6 @@ jobs:
           java-version: ${{ matrix.java }}
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
-      - name: Write firefox.headless values to properties files
-        uses: christian-draeger/write-properties@1.0.1
-        with:
-          path: './user.properties'
-          property: 'firefox.headless'
-          value: 'true'
       - name: Write chrome.headless values to properties files
         uses: christian-draeger/write-properties@1.0.1
         with:
