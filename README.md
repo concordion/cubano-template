@@ -1,3 +1,5 @@
+[![Build and Test](https://github.com/concordion/cubano-template/actions/workflows/ci.yml/badge.svg)](https://github.com/concordion/cubano-template/actions/workflows/ci.yml)
+
 # Cubano Template Project
 
 This is a quick start Cubano template for projects wanting to use the [Cubano framework](https://github.com/concordion/cubano).
